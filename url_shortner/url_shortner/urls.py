@@ -15,14 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
 from url_shortner_api.views import *
 
 router = routers.DefaultRouter()
-router.register(r'urls', URLViewSet)
+router.register(r'urlhit', URLHitViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('urls/', URLViewSet.as_view({'get': 'list'})),
+    path('urls/',URLAPIView.as_view()),
+    path('', include(router.urls)),
 ]
