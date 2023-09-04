@@ -8,11 +8,14 @@ For running the application, please run the following commands on the commandlin
  - python -m venv venv
  - source venv/bin/activate
  - .\venv\Scripts\activate (for Windows)
+
  **Install the modules**
  - pip install -r requirements.txt
+
  **Make database migrations**
  - cd url_shortner
  - python .\manage.py migrate
+ 
  **Run application**
  - python .\manage.py runserver
 
