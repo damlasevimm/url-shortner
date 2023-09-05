@@ -20,7 +20,7 @@ class ShortenAPIView(views.APIView):
 
     def post(self, request):
         data = request.data
-        url=data.get('url')
+        url = data.get('url')
  
         # Checking if this url exists.
         try:
